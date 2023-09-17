@@ -4,6 +4,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as excon
 
+
 #funkcja bedzie czekac na id
 
 def czekaj_na_id (element_id):
@@ -17,10 +18,12 @@ def czekaj_na_id (element_id):
 driver = webdriver.Chrome()
 driver.get('https://www.saucedemo.com')
 
+
 try:
     login_button = czekaj_na_id('login-button')
 except TimeoutException:
     print('Nie znaleziono')
+    raise
 else:
     print('Znaleziono')
 finally:
